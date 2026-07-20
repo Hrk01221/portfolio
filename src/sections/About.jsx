@@ -14,7 +14,7 @@ const highlights = [
   },
   {
     icon: Trophy,
-    title: "Competitive Programming",
+    title: "Problem Solver",
     description:
       "Solving complex algorithmic problems efficiently and optimally.",
   },
@@ -28,7 +28,7 @@ const highlights = [
 export const About = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* left col */}
           <div className="space-y-8">
@@ -87,11 +87,15 @@ export const About = () => {
                   animationDelay: `${100 * (idx + 1)}ms`,
                 }}
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
-                  <items.icon className="w-6 h-6 text-primary"/>
+                <div className="flex gap-4 items-center">
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
+                    <items.icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-semibold mb-2 whitespace-nowrap">{items.title}</h3>
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{items.title}</h3>
-                <p className="text-sm text-muted-foreground">{items.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {items.description}
+                </p>
               </div>
             ))}
           </div>

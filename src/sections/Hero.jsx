@@ -62,7 +62,7 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 pt-32 pb-20 relative z-10">
+      <div className="container mx-auto px-20 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* left column - txt */}
           <div className="space-y-8">
@@ -123,10 +123,10 @@ export const Hero = () => {
             </div>
           </div>
           {/* right column - pfp */}
-          <div className="relativer animate-fade-in animation-delay-300">
+          <div className="relative lg:flex lg:justify-end animate-fade-in animation-delay-300">
             {/* PFP */}
-            <div className="relative max-w-md mx-auto">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
+            <div className="relative max-w-md mx-auto lg:mx-0">
+              <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/30 via-transparent to-primary/10 blur-2xl animate-pulse" />
               <div className="relative glass rounded-3xl p-2 glow-border">
                 <img
                   src="/pfp.jpg"
