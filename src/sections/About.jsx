@@ -8,7 +8,7 @@ const highlights = [
   },
   {
     icon: Layers3,
-    title: "Full-Stack Development",
+    title: "Dev-Ops",
     description:
       "Building end-to-end web applications with modern technologies.",
   },
@@ -28,7 +28,7 @@ const highlights = [
 export const About = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-20 relative z-10">
+      <div className="container mx-auto px-6 md:px-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* left col */}
           <div className="space-y-8">
@@ -46,34 +46,29 @@ export const About = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
               <p>
-                I'm a Full-Stack Developer from Bangladesh with experience
-                building modern web applications using React, Next.js, Node.js,
-                Express, Laravel, and MySQL. I enjoy creating scalable,
-                user-friendly solutions that combine clean design with efficient
-                backend architecture.
+                I'm a Full-Stack Developer from Bangladesh specializing in
+                modern web technologies such as React, Next.js, Node.js,
+                Laravel, and MySQL.
               </p>
 
               <p>
-                Beyond web development, I actively practice Competitive
-                Programming, strengthening my problem-solving abilities and
-                understanding of algorithms and data structures. This analytical
-                mindset helps me write optimized, reliable, and maintainable
-                code.
+                I enjoy building scalable, user-friendly applications and
+                turning ideas into reliable digital products with clean and
+                efficient code.
               </p>
 
               <p>
-                I love turning ideas into real products, whether it's developing
-                online judge systems, event booking platforms, portfolio
-                websites, or IoT projects. I'm constantly learning new
-                technologies and exploring better ways to build impactful
-                software.
+                Alongside development, I practice Competitive Programming to
+                strengthen my problem-solving skills and deepen my understanding
+                of algorithms and data structures.
               </p>
             </div>
 
             <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
               <p className="text-lg font-medium italic text-foreground">
-                "Transforming complex problems into elegant, scalable, and
-                impactful software solutions."
+                <span className="text-primary">" </span>Transforming complex
+                problems into elegant, scalable, and impactful software
+                solutions.<span className="text-primary"> "</span>
               </p>
             </div>
           </div>
@@ -82,7 +77,7 @@ export const About = () => {
             {highlights.map((items, idx) => (
               <div
                 key={idx}
-                className="glass p-6 rounded-2xl animate-fade-in"
+                className="glass p-6 rounded-2xl animate-fade-in transition-all duration-300 ease-out hover:scale-[1.03] hover:-translate-y-2 hover:shadow-2xl"
                 style={{
                   animationDelay: `${100 * (idx + 1)}ms`,
                 }}
@@ -91,7 +86,9 @@ export const About = () => {
                   <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 hover:bg-primary/20">
                     <items.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <h3 className="text-lg font-semibold mb-2 whitespace-nowrap">{items.title}</h3>
+                  <h3 className="text-lg font-semibold mb-2 whitespace-nowrap">
+                    {items.title}
+                  </h3>
                 </div>
                 <p className="text-sm text-muted-foreground">
                   {items.description}

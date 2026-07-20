@@ -62,14 +62,14 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-20 pt-32 pb-20 relative z-10">
+      <div className="container mx-auto px-6 md:px-20 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* left column - txt */}
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span
-                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass 
-              text-sm text-primary "
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-[12px]
+              md:text-sm text-primary"
               >
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Software Engineer • Competitive Programmer
@@ -77,7 +77,7 @@ export const Hero = () => {
             </div>
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
                 Crafting <span className="text-primary glow-text">digital</span>
                 <br />
                 experiences with
@@ -94,13 +94,13 @@ export const Hero = () => {
               </p>
             </div>
             {/* CTAs */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+            <div className="flex justify-center md:justify-normal flex-wrap gap-4 animate-fade-in animation-delay-300">
+              <Button size="lg" className="w-full md:w-auto">
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download Cv
+              <AnimatedBorderButton className="w-full md:w-auto">
+                <Download className="w-5 h-5"/>
+                Download CV
               </AnimatedBorderButton>
             </div>
             {/* Social links */}
