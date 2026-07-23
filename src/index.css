@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* #root {
+  transform: scale(0.8);
+  transform-origin: top center;
+} */
 @theme {
   --color-background: #0f1418;
   --color-foreground: #f0f2f5;
@@ -52,8 +56,8 @@
       color-mix(in srgb, var(--color-primary) 50%, transparent);
   }
   .glow-border {
-    box-shadow: 0 0 20px
-        color-mix(in srgb, var(--color-primary) 20%, transparent),
+    box-shadow:
+      0 0 20px color-mix(in srgb, var(--color-primary) 20%, transparent),
       inset 0 0 20px color-mix(in srgb, var(--color-primary) 5%, transparent);
   }
 }
@@ -154,5 +158,10 @@
     background-color: color-mix(in srgb, #26c4b8 15%, transparent);
     backdrop-filter: blur(16px);
     box-shadow: 0 0 20px color-mix(in srgb, #26c4b8 20%, transparent);
+  }
+  .timeline-glow {
+    box-shadow:
+      0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
+      0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
 }
