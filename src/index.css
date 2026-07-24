@@ -25,6 +25,8 @@
 
   --color-highlight: #f5a623;
   --color-surface: #1a2329;
+
+  --color-premium-blue: #2C4C9C;
 }
 
 @layer base {
@@ -45,6 +47,11 @@
     background-color: color-mix(in srgb, var(--color-surface) 50%, transparent);
     backdrop-filter: blur(16px);
     border: 1px solid color-mix(in srgb, var(--color-border) 50%, transparent);
+  }
+  .glass2 {
+    background-color: color-mix(in srgb, var(--color-surface) 20%, transparent);
+    backdrop-filter: blur(16px);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 20%, transparent);
   }
   .glass-strong {
     background-color: color-mix(in srgb, var(--color-surface) 80%, transparent);
@@ -164,4 +171,12 @@
       0 0 40px color-mix(in srgb, var(--color-primary) 35%, transparent),
       0 0 80px color-mix(in srgb, var(--color-primary) 25%, transparent);
   }
+}
+
+.ai-glow-spill-mask {
+  mask-image: radial-gradient(
+    ellipse 100% 100% at 50% 50%,
+    transparent 50%,
+    black 100%
+  );
 }

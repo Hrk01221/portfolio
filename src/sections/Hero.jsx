@@ -77,16 +77,16 @@ export const Hero = () => {
             </div>
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Crafting <span className="text-primary glow-text">digital</span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Building <span className="text-primary glow-text">seamless</span>
                 <br />
-                experiences with
+                experiences,
                 <br />
-                <span className="font-serif italic font-normal text-white">
-                  precision
+                <span className="font-serif italic text-4xl md:text-5xl font-normal text-white">
+                  one line of code at a time
                 </span>
               </h1>
-              <p className="text-lg text-muted-foreground mx-w-lg animate-fade-in animation-delay-200">
+              <p className="text-sm md:text-lg text-muted-foreground mx-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Hridoy Nandi, a full-stack developer and competitive
                 programmer passionate about creating modern web applications,
                 solving complex problems, and continuously learning new
