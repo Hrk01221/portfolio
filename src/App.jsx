@@ -5,6 +5,7 @@ import { Education } from "@/sections/Education";
 import { Skills } from "@/sections/Skills";
 import { Contact } from "@/sections/Contact";
 import { Navbar } from "@/layout/Navbar";
+import { Footer } from "@/sections/Footer";
 function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -16,6 +17,7 @@ function App() {
         <Education />
         <Skills />
         <Contact />
+        <Footer/>
       </main>
     </div>
   );

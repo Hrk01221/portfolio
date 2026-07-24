@@ -140,7 +140,7 @@ const skillCategories = [
 export const Skills = () => {
   return (
     <section id="skills">
-      <div className="container mx-auto px-6 md:px-20 relative mb-20 z-10">
+      <div className="container mx-auto px-6 md:px-20 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             My Skills
