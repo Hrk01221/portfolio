@@ -12,7 +12,7 @@ export const AnimatedBorderButton = ({ children , className="" }) => {
     >
       {/* Animated SVG Border */}
       <svg
-        className="hidden md:block absolute left-0 top-0 w-full h-full pointer-events-none download-cv-border"
+        className="hidden lg:block absolute left-0 top-0 w-full h-full pointer-events-none download-cv-border"
         viewBox="0 0 200 60"
         preserveAspectRatio="none"
         style={{ overflow: "visible" }}

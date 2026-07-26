@@ -6,10 +6,44 @@ import { Skills } from "@/sections/Skills";
 import { Contact } from "@/sections/Contact";
 import { Navbar } from "@/layout/Navbar";
 import { Footer } from "@/sections/Footer";
+import { ArrowUp } from "lucide-react";
+import { useEffect, useState } from "react";
 function App() {
+  const [activeSection, setActiveSection] = useState("hero");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section[id]");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-40% 0px -40% 0px",
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
   return (
-    <div className="min-h-screen overflow-x-hidden">
-      <Navbar />
+    <div className="relative min-h-screen overflow-x-hidden">
+      <div
+        onClick={() => {
+          document.getElementById("hero")?.scrollIntoView({
+            behavior: "smooth",
+          });
+        }}
+        className="fixed right-2 bottom-2 lg:right-10 lg:bottom-10 rounded-full glass p-3 lg:p-4 cursor-pointer z-20"
+      >
+        <ArrowUp className="w-5 h-5" />
+      </div>
+      <Navbar activeSection={activeSection}/>
       <main>
         <Hero />
         <About />
@@ -17,7 +51,7 @@ function App() {
         <Education />
         <Skills />
         <Contact />
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

@@ -28,7 +28,7 @@ const highlights = [
 export const About = () => {
   return (
     <section id="about" className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-6 md:px-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-20 relative z-10 flex flex-col gap-16">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* left col */}
           <div className="space-y-8">
@@ -37,7 +37,7 @@ export const About = () => {
                 About Me
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
+            <h2 className="text-4xl lg:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
               Building the future,
               <span className=" font-serif italic font-normal text-white">
                 {" "}
@@ -61,14 +61,6 @@ export const About = () => {
                 Alongside development, I practice Competitive Programming to
                 strengthen my problem-solving skills and deepen my understanding
                 of algorithms and data structures.
-              </p>
-            </div>
-
-            <div className="glass rounded-2xl p-6 glow-border animate-fade-in animation-delay-300">
-              <p className="text-lg font-medium italic text-foreground">
-                <span className="text-primary">" </span>Transforming complex
-                problems into elegant, scalable, and impactful software
-                solutions.<span className="text-primary"> "</span>
               </p>
             </div>
           </div>
@@ -96,6 +88,17 @@ export const About = () => {
               </div>
             ))}
           </div>
+        </div>
+        <div className="relative w-full lg:w-[80%] mx-auto glass rounded-2xl px-6 py-10 lg:py-20 animate-fade-in animation-delay-300 flex flex-col justify-center items-center text-center gap-8">
+          
+          <span className="text-7xl lg:text-9xl absolute top-2 left-3 lg:left-6 opacity-10">“</span>
+          <span className="text-7xl lg:text-9xl absolute right-2 translate-y-20 lg:translate-y-38 opacity-10">”</span>
+
+          <span className="text-base lg:text-4xl italic font-serif">
+            Every solved problem reveals <br /> a better question.
+          </span>
+  
+          <span className="text-green-400 tracking-widest text-sm lg:text-xl italic">— Hridoy Nandi</span>
         </div>
       </div>
     </section>

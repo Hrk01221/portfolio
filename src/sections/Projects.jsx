@@ -34,7 +34,7 @@ const projects = [
     description:
       "Zenvite is a dynamic event management platform that simplifies the process of organizing, booking, and managing events. The platform is designed to streamline attendee registration, event scheduling, and ticket booking, providing a seamless experience for both event organizers and participants.",
     image: "/projects/project-4.png",
-    tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL" ,"UI/UX"],
+    tags: ["HTML", "CSS", "JavaScript", "PHP", "SQL", "UI/UX"],
     link: "https://github.com/NabilaRahmanMedha/Zenvite",
     github: "https://github.com/NabilaRahmanMedha/Zenvite",
   },
@@ -51,17 +51,17 @@ const projects = [
 
 export const Projects = () => {
   return (
-    <section id="projects" className="py-32 relative overflow-hidden">
+    <section id="projects" className="py-18 relative overflow-hidden">
       {/* bg-glows */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-64 h-64 bg-highlight/5 rounded-full blur-3xl" />
-      <div className="container mx-auto px-6 md:px-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-20 relative z-10">
         {/* section header */}
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Featured Work
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Projects that
             <span className="font-serif italic font-normal text-white">
               {" "}
@@ -74,10 +74,10 @@ export const Projects = () => {
           </p>
         </div>
         {/* Projects grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, idx) => (
             <div
-              className="group glass rounded-2xl overflow-hidden animate-fade-in md:row-span-1 hover:border-2 hover:border-primary/70 transition-all duration-200"
+              className="group glass rounded-2xl overflow-hidden animate-fade-in lg:row-span-1 hover:border-2 hover:border-primary/70 transition-all duration-200"
               key={idx}
               style={{
                 animationDelay: `${100 * (idx + 1)}ms`,
@@ -92,7 +92,7 @@ export const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
                 {/* Overlay links */}
-                <div className="hidden absolute inset-0 md:flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="hidden absolute inset-0 lg:flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     target="_blank"
                     href={project.link}

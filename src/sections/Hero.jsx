@@ -32,7 +32,10 @@ const skills = [
 
 export const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0">
         <img
@@ -49,6 +52,7 @@ export const Hero = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {[...Array(30)].map((_, i) => (
           <div
+            key={i}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
             style={{
               backgroundColor: "#20B2A6",
@@ -62,14 +66,14 @@ export const Hero = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 md:px-20 pt-32 pb-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-20 pt-32 pb-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* left column - txt */}
           <div className="space-y-8">
             <div className="animate-fade-in">
               <span
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-[12px]
-              md:text-sm text-primary"
+              lg:text-sm text-primary"
               >
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
                 Software Engineer • Competitive Programmer
@@ -77,16 +81,17 @@ export const Hero = () => {
             </div>
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Building <span className="text-primary glow-text">seamless</span>
+              <h1 className="text-4xl lg:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
+                Building{" "}
+                <span className="text-primary glow-text">seamless</span>
                 <br />
                 experiences,
                 <br />
-                <span className="font-serif italic text-4xl md:text-5xl font-normal text-white">
+                <span className="font-serif italic text-4xl lg:text-5xl font-normal text-white">
                   one line of code at a time
                 </span>
               </h1>
-              <p className="text-sm md:text-lg text-muted-foreground mx-w-lg animate-fade-in animation-delay-200">
+              <p className="text-sm lg:text-lg text-muted-foreground mx-w-lg animate-fade-in animation-delay-200">
                 Hi, I'm Hridoy Nandi, a full-stack developer and competitive
                 programmer passionate about creating modern web applications,
                 solving complex problems, and continuously learning new
@@ -94,12 +99,20 @@ export const Hero = () => {
               </p>
             </div>
             {/* CTAs */}
-            <div className="flex justify-center md:justify-normal flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg" className="w-full md:w-auto">
+            <div className="flex justify-center lg:justify-normal flex-wrap gap-4 animate-fade-in animation-delay-300">
+              <Button
+                onClick={() => {
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+                size="lg"
+                className="w-full lg:w-auto cursor-pointer"
+              >
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
-              <AnimatedBorderButton className="w-full md:w-auto">
-                <Download className="w-5 h-5"/>
+              <AnimatedBorderButton className="w-full lg:w-auto">
+                <Download className="w-5 h-5" />
                 Download CV
               </AnimatedBorderButton>
             </div>
@@ -172,13 +185,17 @@ export const Hero = () => {
         </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in animation-delay-800 z-50">
-        <a
-          href="#about"
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
+        <div
+          onClick={() => {
+            document.getElementById("about")?.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="cursor-pointer flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors group"
         >
           <span className="text-xs uppercase tracking-wider">Scroll</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />
-        </a>
+        </div>
       </div>
     </section>
   );

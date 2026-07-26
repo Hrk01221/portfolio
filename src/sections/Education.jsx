@@ -53,15 +53,15 @@ const educations = [
 
 export const Education = () => {
   return (
-    <section id="education" className="py-32 relative overflow-hidden">
+    <section id="education" className="py-18 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-y-1/2" />
-      <div className="container mx-auto px-6 md:px-20 relative z-10">
+      <div className="container mx-auto px-6 lg:px-20 relative z-10">
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             Education Journey
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Education that{" "}
             <span className="font-serif italic font-normal text-white">
               makes difference
@@ -75,36 +75,36 @@ export const Education = () => {
         </div>
         {/* Timeline */}
         <div className="relative">
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+          <div className="timeline-glow absolute left-0 lg:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary/70 via-primary/30 to-transparent lg:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
           {/* Items */}
           <div className="space-y-12">
             {educations.map((edu, idx) => (
               <div
                 key={idx}
-                className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
+                className="relative grid lg:grid-cols-2 gap-8 animate-fade-in"
                 style={{
                   animationDelay: `${100 * (idx + 1)}ms`,
                 }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10"></div>
+                <div className="absolute left-0 lg:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10"></div>
                 {/* Content */}
                 <div
-                  className={`pl-8 md:pl-0 ${idx % 2 === 0 ? "md:pr-16" : "md:col-start-2 md:pl-16"}`}
+                  className={`pl-8 lg:pl-0 ${idx % 2 === 0 ? "lg:pr-16" : "lg:col-start-2 lg:pl-16"}`}
                 >
                   <div
                     className={`glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500`}
                   >
-                    <p className="text-sm md:text-base text-primary font-medium">
+                    <p className="text-sm lg:text-base text-primary font-medium">
                       {edu.period}
                     </p>
-                    <h1 className="text-xl md:text-2xl font-semibold mt-2">
+                    <h1 className="text-xl lg:text-2xl font-semibold mt-2">
                       {edu.degree}
                     </h1>
-                    <p className="text-base md:text-xl font-medium text-foreground/80 italic">
+                    <p className="text-base lg:text-xl font-medium text-foreground/80 italic">
                       {edu.institute}
                     </p>
-                    <div className="flex flex-wrap gap-2 md:gap-8 mt-4 text-sm md:text-base">
+                    <div className="flex flex-wrap gap-2 lg:gap-8 mt-4 text-sm lg:text-base">
                       <p className="flex items-center justify-center gap-2 glass-strong text-primary font-bold rounded-2xl px-2 py-1">
                         <Medal className="w-4 h-4"/>
                         {idx == 0 ? "CGPA" : "Gpa"}: {edu.gpa}
@@ -114,14 +114,14 @@ export const Education = () => {
                         {idx == 0 ? "Department" : "Subject"}: {edu.subject}
                       </p>
                     </div>
-                    <p className="text-xs md:text-sm text-muted-foreground mt-4 italic">
+                    <p className="text-xs lg:text-sm text-muted-foreground mt-4 italic">
                       "{edu.description}"
                     </p>
                     <div className={`flex flex-wrap gap-2 mt-4`}>
                       {edu.tag.map((tg, tg_idx) => (
                         <span
                           key={tg_idx}
-                          className="px-3 py-1 bg-surface text-[10px] md:text-xs rounded-full text-muted-foreground"
+                          className="px-3 py-1 bg-surface text-[10px] lg:text-xs rounded-full text-muted-foreground"
                         >
                           {tg}
                         </span>

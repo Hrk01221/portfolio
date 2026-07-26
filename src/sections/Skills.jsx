@@ -65,8 +65,8 @@ const skillCategories = [
       { name: "Framer Motion", icon: SiFramer, color: "text-pink-400" },
     ],
     accent: "cyan",
-    glowColor:"rgba(34,211,238,0.25)",
-    borderColor: "hover:border-cyan-500/40"
+    glowColor: "rgba(34,211,238,0.25)",
+    borderColor: "hover:border-cyan-500/40",
   },
   {
     id: "02",
@@ -89,8 +89,8 @@ const skillCategories = [
       { name: "MongoDB", icon: SiMongodb, color: "text-green-600" },
     ],
     accent: "emerald",
-    glowColor:"rgba(16,185,129,0.25)",
-    borderColor: "hover:border-emerald-500/40"
+    glowColor: "rgba(16,185,129,0.25)",
+    borderColor: "hover:border-emerald-500/40",
   },
   {
     id: "03",
@@ -109,8 +109,8 @@ const skillCategories = [
       { name: "AWS", icon: FaAws, color: "text-yellow-500" },
     ],
     accent: "orange",
-    glowColor:"rgba(249,115,22,0.25)",
-    borderColor: "hover:border-orange-500/40"
+    glowColor: "rgba(249,115,22,0.25)",
+    borderColor: "hover:border-orange-500/40",
   },
   {
     id: "04",
@@ -133,20 +133,20 @@ const skillCategories = [
       },
     ],
     accent: "purple",
-    glowColor:"rgba(168,85,247,0.25)",
-    borderColor: "hover:border-purple-500/40"
+    glowColor: "rgba(168,85,247,0.25)",
+    borderColor: "hover:border-purple-500/40",
   },
 ];
 export const Skills = () => {
   return (
-    <section id="skills">
-      <div className="container mx-auto px-6 md:px-20 relative z-10">
+    <section id="skills" className="py-32 relative overflow-hidden">
+      <div className="container mx-auto px-6 lg:px-20 relative z-10">
         <div className="text-center mx-auto max-w-3xl mb-16">
           <span className="text-secondary-foreground text-sm font-medium tracking-wider uppercase animate-fade-in">
             My Skills
           </span>
 
-          <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
+          <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
             Skills that
             <span className="font-serif italic font-normal text-white">
               {" "}
@@ -160,7 +160,7 @@ export const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 auto-rows-fr">
+        <div className="grid lg:grid-cols-2 gap-8 auto-rows-fr">
           {skillCategories.map((sc, idx) => {
             const theme = accentMap[sc.accent];
 
@@ -172,7 +172,11 @@ export const Skills = () => {
                 }}
                 className="animate-fade-in h-full"
               >
-                <AnimatedCard className="h-full" glowColor={sc.glowColor} borderColor={sc.borderColor}>
+                <AnimatedCard
+                  className="h-full"
+                  glowColor={sc.glowColor}
+                  borderColor={sc.borderColor}
+                >
                   <div className="group flex flex-col h-full space-y-4">
                     <div className="flex gap-4">
                       <div
@@ -189,7 +193,7 @@ export const Skills = () => {
 
                       <div className="flex flex-col gap-1">
                         <span
-                          className={`text-[10px] md:text-sm font-serif tracking-widest ${theme.text}`}
+                          className={`text-[10px] lg:text-sm font-serif tracking-widest ${theme.text}`}
                         >
                           {sc.is}
                         </span>
@@ -200,7 +204,7 @@ export const Skills = () => {
                       </div>
                     </div>
 
-                    <p className="text-[10px] md:text-base text-muted-foreground italic">
+                    <p className="text-[10px] lg:text-base text-muted-foreground italic">
                       {sc.description}
                     </p>
 
@@ -222,9 +226,11 @@ export const Skills = () => {
                             animation-delay-400
                           `}
                         >
-                          <skill.icon className={`${skill.color} text-sm md:text-base`} />
+                          <skill.icon
+                            className={`${skill.color} text-sm lg:text-base`}
+                          />
 
-                          <span className="font-serif text-[10px] md:text-sm tracking-wide">
+                          <span className="font-serif text-[10px] lg:text-sm tracking-wide">
                             {skill.name}
                           </span>
                         </div>
