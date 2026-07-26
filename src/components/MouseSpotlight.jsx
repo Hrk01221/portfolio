@@ -18,7 +18,7 @@ export const MouseSpotlight = () => {
 
   return (
     <div
-      className="fixed inset-0 pointer-events-none z-0"
+      className="fixed inset-0 pointer-events-none z-100"
       style={{
         background: `radial-gradient(
           800px circle at ${mouse.x}px ${mouse.y}px,

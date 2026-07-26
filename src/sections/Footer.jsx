@@ -3,45 +3,92 @@ import {
   FaXTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaCode,
 } from "react-icons/fa6";
+const quicklinks = [
+  { label: "Home", id: "hero" },
+  { label: "About", id: "about" },
+  { label: "Projects", id: "projects" },
+  { label: "Education", id: "education" },
+  { label: "Skills", id: "skills" },
+];
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
-    <section id="footer" className="py-15 lg:mb-10 relative overflow-hidden">
-      <div className="container mx-auto px-6 lg:px-20 relative z-10">
-        <div className="w-full h-[1px] bg-gradient-to-r from-primary via-primary/80 to-transparent"/>
-        <div className="grid lg:grid-cols-2 gap-1">
-          <div className="text-[10px] lg:text-sm text-foreground/80 tracking-wide flex items-center place-self-center lg:place-self-start mt-5">
-            © HRK 2026. ALL RIGHTS RESERVED.
+    <section
+      id="footer"
+      className="py-8 relative overflow-hidden bg-background border-t border-border"
+    >
+      <div className="container mx-auto px-6 lg:px-20 relative z-10 space-y-8 animate-fade-in">
+        <div className="grid lg:grid-cols-2 gap-8">
+          {/* left section */}
+          <div className="space-y-4 lg:place-self-auto">
+            <div className="flex items-center gap-4">
+              <span className="glass p-2 rounded-lg">
+                <FaCode />
+              </span>
+              <span className="text-lg">Hridoy Nandi</span>
+            </div>
+            <div className="text-muted-foreground text-sm">
+              Software Engineer · Competitive Programmer ·
+              <br />
+              Solving a complex problem right now :)
+            </div>
+            <div className="flex gap-4">
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
+              >
+                <FaFacebookF />
+              </a>
+
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
+              >
+                <FaXTwitter />
+              </a>
+
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="#"
+                className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
           </div>
-          <div className="flex gap-4 mt-5 place-self-center lg:place-self-end">
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
-            >
-              <FaFacebookF />
-            </a>
 
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
-            >
-              <FaXTwitter />
-            </a>
-
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
-            >
-              <FaInstagram />
-            </a>
-
-            <a
-              href="#"
-              className="w-10 h-10 flex items-center justify-center rounded-full border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
-            >
-              <FaLinkedinIn />
-            </a>
+          {/* right section */}
+          <div className="space-y-2 lg:place-self-auto">
+            <div className="">Quick links</div>
+            <div className="text-muted-foreground/60 grid grid-cols-2 gap-3 lg:place-items-start">
+              {quicklinks.map((link, idx) => (
+                <span
+                  onClick={() =>
+                    document
+                      .getElementById(link.id)
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  key={idx}
+                  className="text-sm hover:text-primary cursor-pointer transition-all duration-300"
+                >
+                  {link.label}
+                </span>
+              ))}
+            </div>
           </div>
+        </div>
+
+        <div className="w-full h-[1px] bg-gradient-to-r from-primary/60 via-primary/40 to-transparent" />
+        <div className="text-[10px] lg:text-sm text-muted-foreground tracking-wide flex items-center justify-center">
+          © {currentYear} Hridoy Nandi  ·  CSE @ AUST <span className="hidden lg:block">  ·  Built with 💜 in Dhaka, Bangladesh</span>
         </div>
       </div>
     </section>

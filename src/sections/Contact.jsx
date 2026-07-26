@@ -1,5 +1,5 @@
 import { MapPin } from "lucide-react";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow, FaPaperPlane } from "react-icons/fa";
 import {
   FaFacebook,
   FaGithub,
@@ -145,9 +145,14 @@ export const Contact = () => {
               />
             </div>
 
-            <div onClick={()=>(alert("Message Sent"))} className="flex border glass-strong border-primary p-3 rounded-2xl justify-center items-center gap-4 text-green-500 cursor-pointer ">
-              <FaLocationArrow className="w-4 h-4 lg:w-5 lg:h-5"/>
-              <span className="text-sm lg:text-lg tracking-widest ">Send Message</span>
+            <div
+              onClick={() => alert("Message Sent")}
+              className="flex border glass-strong border-primary p-3 rounded-2xl justify-center items-center gap-4 text-foreground cursor-pointer hover:bg-premium-purple transition-all duration-500"
+            >
+              <FaPaperPlane className="w-4 h-4 lg:w-5 lg:h-5" />
+              <span className="text-sm lg:text-md tracking-widest ">
+                Send Message
+              </span>
             </div>
           </div>
         </div>
@@ -155,4 +160,3 @@ export const Contact = () => {
     </section>
   );
 };
-

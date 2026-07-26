@@ -46,7 +46,7 @@ function App() {
             behavior: "smooth",
           });
         }}
-        className="fixed right-2 bottom-2 lg:right-10 lg:bottom-10 rounded-full glass p-3 lg:p-4 cursor-pointer z-20"
+        className="fixed right-2 bottom-2 lg:right-10 lg:bottom-10 rounded-full glass p-3 lg:p-4 cursor-pointer z-20 hover:scale-110 transition-all duration-500"
       >
         <ArrowUp className="w-5 h-5" />
       </div>
@@ -54,9 +54,9 @@ function App() {
       <main>
         <Hero />
         <About />
-        <Projects />
         <Education />
         <Skills />
+        <Projects />
         <Contact />
         <Footer />
       </main>

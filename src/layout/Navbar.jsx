@@ -3,9 +3,11 @@ import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 const navLinks = [
   { id: "about", label: "About" },
-  { id: "projects", label: "Projects" },
+  { id: "cp", label: "Competitive Programming" },
+  { id: "achievements", label: "Achievements" },
   { id: "education", label: "Education" },
   { id: "skills", label: "Skills" },
+  { id: "projects", label: "Projects" },
 ];
 export const Navbar = ({ activeSection }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,9 +30,9 @@ export const Navbar = ({ activeSection }) => {
               behavior: "smooth",
             });
           }}
-          className="text-xl font-bold tracking-tight hover:text-primary cursor-pointer"
+          className="text-xl font-bold tracking-tight hover:text-primary cursor-pointer transition-all duration-400"
         >
-          Hrk <span className="text-primary">.</span>
+          <span className="italic font-serif tracking-widest">Hrk</span> <span className="text-primary">.</span>
         </div>
         {/* Desktop */}
         <div className="hidden lg:flex items-center gap-1">
