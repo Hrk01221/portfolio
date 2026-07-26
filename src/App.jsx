@@ -8,6 +8,7 @@ import { Navbar } from "@/layout/Navbar";
 import { Footer } from "@/sections/Footer";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { MouseSpotlight } from "@/components/MouseSpotlight";
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
 
@@ -33,6 +34,7 @@ function App() {
   }, []);
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      <MouseSpotlight/>
       {/* Background*/}
       <div className="fixed inset-0 -z-10">
         <div className="absolute inset-0 bg-grid opacity-20" />
