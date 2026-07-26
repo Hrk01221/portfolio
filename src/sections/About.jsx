@@ -91,8 +91,8 @@ export const About = () => {
         </div>
         <div className="relative w-full lg:w-[80%] mx-auto glass rounded-2xl px-6 py-10 lg:py-20 animate-fade-in animation-delay-300 flex flex-col justify-center items-center text-center gap-8">
           
-          <span className="text-7xl lg:text-9xl absolute top-2 left-3 lg:left-6 opacity-10">“</span>
-          <span className="text-7xl lg:text-9xl absolute right-2 translate-y-20 lg:translate-y-38 opacity-10">”</span>
+          <span className="text-primary text-7xl lg:text-9xl absolute top-2 left-3 lg:left-6 opacity-10">“</span>
+          <span className="text-primary text-7xl lg:text-9xl absolute right-2 translate-y-20 lg:translate-y-38 opacity-10">”</span>
 
           <span className="text-base lg:text-4xl italic font-serif">
             Every solved problem reveals <br /> a better question.

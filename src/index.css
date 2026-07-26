@@ -5,28 +5,27 @@
   transform-origin: top center;
 } */
 @theme {
-  --color-background: #0f1418;
-  --color-foreground: #f0f2f5;
+  --color-background: #0F0A1A;
+  --color-foreground: #F8FAFC;
 
-  --color-card: #141a1f;
+  --color-card: #161124;
 
-  --color-primary: #20b2a6;
-  --color-primary-foreground: #ffffff;
+  /* Purple 400 */
+  --color-primary: #C084FC;
+  --color-primary-foreground: #FFFFFF;
 
-  --color-secondary: #1f2830;
-  --color-secondary-foreground: #20b2a6;
+  --color-secondary: #241B3A;
+  --color-secondary-foreground: #C084FC;
 
-  --color-muted: #252e37;
-  --color-muted-foreground: #7a8491;
+  --color-muted: #1D1830;
+  --color-muted-foreground: #A1A1AA;
 
-  --color-border: #242b32;
+  --color-border: #31284A;
 
-  --radius: 0.75rem;
+  --color-surface: #181324;
 
-  --color-highlight: #f5a623;
-  --color-surface: #1a2329;
-
-  --color-premium-blue: #2C4C9C;
+  --color-highlight: #F472B6; /* Pink accent */
+  --color-premium-purple: #A855F7; /* Purple 500 */
 }
 
 @layer base {
