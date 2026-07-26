@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa6";
 export const Footer = () => {
   return (
-    <section id="footer" className="py-15 lg:mb-10 relative overflow-hidden">
+    <section id="footer" className="py-15 lg:mb-10 relative overflow-hidden bg-background">
       <div className="container mx-auto px-6 lg:px-20 relative z-10">
         <div className="grid lg:grid-cols-2 border-t border-surface gap-1">
           <div className="text-[10px] lg:text-sm text-foreground/80 tracking-wide flex items-center place-self-center lg:place-self-start mt-5">

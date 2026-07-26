@@ -33,6 +33,11 @@ function App() {
   }, []);
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      {/* Background*/}
+      <div className="fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-grid opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background" />
+      </div>
       <div
         onClick={() => {
           document.getElementById("hero")?.scrollIntoView({
@@ -43,7 +48,7 @@ function App() {
       >
         <ArrowUp className="w-5 h-5" />
       </div>
-      <Navbar activeSection={activeSection}/>
+      <Navbar activeSection={activeSection} />
       <main>
         <Hero />
         <About />
