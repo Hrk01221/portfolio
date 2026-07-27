@@ -1,3 +1,5 @@
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { MapPin } from "lucide-react";
 import { FaLocationArrow, FaPaperPlane } from "react-icons/fa";
 import {
@@ -8,7 +10,29 @@ import {
   FaSquareXTwitter,
   FaWhatsapp,
 } from "react-icons/fa6";
+import { toast } from "sonner";
 export const Contact = () => {
+  const form = useRef();
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    try {
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        form.current,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      toast.success("Message sent successfully!");
+      form.current.reset();
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      toast.error("Failed to send message.");
+    }
+  };
+
   return (
     <section id="contact" className="py-15 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-20 relative z-10">
@@ -106,7 +130,11 @@ export const Contact = () => {
           </div>
 
           {/* right container */}
-          <div className="glass rounded-2xl p-8 space-y-4 hover:-translate-y-2 shadow-xl hover:shadow-primary/10 border hover:border-primary/60 transition-al duration-500 ease-out animate-fade-in">
+          <form
+            ref={form}
+            onSubmit={sendEmail}
+            className="glass rounded-2xl p-8 space-y-4 hover:-translate-y-2 shadow-xl hover:shadow-primary/10 border hover:border-primary/60 transition-all duration-500 ease-out animate-fade-in"
+          >
             <h1 className="text-2xl font-bold mb-8">Send a Message</h1>
 
             <div className="grid lg:grid-cols-2 gap-4">
@@ -114,16 +142,21 @@ export const Contact = () => {
                 <span className="px-1 text-foreground/70">Name</span>
                 <input
                   type="text"
+                  name="name"
                   placeholder="Your Name"
+                  required
                   className="border-[1.8px] border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/60 placeholder:text-muted-foreground/80 transition-all duration-300"
                 />
               </div>
-              <div className="flex flex-col gap-3">
-                <span className="px-1 text-foreground/70 text-sm">Email</span>
+
+              <div className="flex flex-col gap-3 text-sm">
+                <span className="px-1 text-foreground/70">Email</span>
                 <input
-                  type="text"
+                  type="email"
+                  name="email"
                   placeholder="you@gmail.com"
-                  className="border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/60 placeholder:text-muted-foreground/80 transition-all duration-300"
+                  required
+                  className="border-[1.8px] border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/60 placeholder:text-muted-foreground/80 transition-all duration-300"
                 />
               </div>
             </div>
@@ -132,6 +165,7 @@ export const Contact = () => {
               <span className="px-1 text-foreground/70 text-sm">Subject</span>
               <input
                 type="text"
+                name="subject"
                 placeholder="What's this about?"
                 className="border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/60 placeholder:text-muted-foreground/80 transition-all duration-300"
               />
@@ -140,21 +174,23 @@ export const Contact = () => {
             <div className="flex flex-col gap-3">
               <span className="px-1 text-foreground/70 text-sm">Message</span>
               <textarea
+                name="message"
                 placeholder="Tell me about it...."
+                required
                 className="min-h-30 border border-border rounded-lg px-3 py-2 focus:outline-none focus:border-primary/60 placeholder:text-muted-foreground/80 transition-all duration-300 overflow-y-auto scrollbar-none resize-none"
               />
             </div>
 
-            <div
-              onClick={() => alert("Message Sent")}
-              className="flex border glass-strong border-primary p-3 rounded-2xl justify-center items-center gap-4 text-foreground cursor-pointer hover:bg-premium-purple transition-all duration-500"
+            <button
+              type="submit"
+              className="w-full flex border glass-strong border-primary p-3 rounded-2xl justify-center items-center gap-4 text-foreground cursor-pointer hover:bg-premium-purple transition-all duration-500"
             >
               <FaPaperPlane className="w-4 h-4 lg:w-5 lg:h-5" />
-              <span className="text-sm lg:text-md tracking-widest ">
+              <span className="text-sm lg:text-md tracking-widest">
                 Send Message
               </span>
-            </div>
-          </div>
+            </button>
+          </form>
         </div>
       </div>
     </section>
