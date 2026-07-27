@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { MapPin } from "lucide-react";
 import { FaLocationArrow, FaPaperPlane } from "react-icons/fa";
@@ -13,9 +13,12 @@ import {
 import { toast } from "sonner";
 export const Contact = () => {
   const form = useRef();
+  const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = async (e) => {
     e.preventDefault();
+
+    setIsLoading(true);
 
     try {
       await emailjs.sendForm(
@@ -30,9 +33,10 @@ export const Contact = () => {
     } catch (error) {
       console.error("EmailJS Error:", error);
       toast.error("Failed to send message.");
+    } finally {
+      setIsLoading(false);
     }
   };
-
   return (
     <section id="contact" className="py-15 relative overflow-hidden">
       <div className="container mx-auto px-6 lg:px-20 relative z-10">
@@ -183,12 +187,24 @@ export const Contact = () => {
 
             <button
               type="submit"
-              className="w-full flex border glass-strong border-primary p-3 rounded-2xl justify-center items-center gap-4 text-foreground cursor-pointer hover:bg-premium-purple transition-all duration-500"
+              disabled={isLoading}
+              className="w-full flex border glass-strong border-primary p-3 rounded-2xl justify-center items-center gap-4 text-foreground cursor-pointer hover:bg-premium-purple transition-all duration-500 disabled:opacity-70 disabled:cursor-not-allowed"
             >
-              <FaPaperPlane className="w-4 h-4 lg:w-5 lg:h-5" />
-              <span className="text-sm lg:text-md tracking-widest">
-                Send Message
-              </span>
+              {isLoading ? (
+                <>
+                  <div className="w-5 h-5 border-2 border-foreground/30 border-t-foreground rounded-full animate-spin" />
+                  <span className="text-sm lg:text-md tracking-widest">
+                    Sending...
+                  </span>
+                </>
+              ) : (
+                <>
+                  <FaPaperPlane className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <span className="text-sm lg:text-md tracking-widest">
+                    Send Message
+                  </span>
+                </>
+              )}
             </button>
           </form>
         </div>
