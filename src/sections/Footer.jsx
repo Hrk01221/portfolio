@@ -4,6 +4,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaCode,
+  FaGithub,
 } from "react-icons/fa6";
 const quicklinks = [
   { label: "Home", id: "hero" },
@@ -36,28 +37,32 @@ export const Footer = () => {
             </div>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.facebook.com/hridoy.nandi.14/"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
               >
                 <FaFacebookF />
               </a>
 
               <a
-                href="#"
+                href="https://x.com/Hrk01221"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
               >
                 <FaXTwitter />
               </a>
 
               <a
-                href="#"
+                href="https://github.com/Hrk01221"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
               >
-                <FaInstagram />
+                <FaGithub />
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/hridoy-nandi-69330b369/"
+                target="_blank"
                 className="w-10 h-10 flex items-center justify-center rounded-xl border border-primary/20 hover:border-primary hover:text-primary transition-all duration-300 hover:-translate-y-1"
               >
                 <FaLinkedinIn />

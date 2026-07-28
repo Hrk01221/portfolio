@@ -110,23 +110,23 @@ export const Contact = () => {
               </span>
 
               <div className="flex gap-1 lg:gap-6">
-                <div className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
+                <div onClick={() => window.open("https://github.com/Hrk01221", "_blank")} className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
                   <FaGithub className="w-5 h-5" />
                 </div>
 
-                <div className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
+                <div onClick={() => window.open("https://www.linkedin.com/in/hridoy-nandi-69330b369/", "_blank")} className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
                   <FaLinkedin className="w-5 h-5" />
                 </div>
 
-                <div className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
+                <div onClick={() => window.open("https://wa.me/8801906953072?text=Hello%20HRK!", "_blank")} className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
                   <FaWhatsapp className="w-5 h-5" />
                 </div>
 
-                <div className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
+                <div onClick={() => window.open("https://www.facebook.com/hridoy.nandi.14/", "_blank")} className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
                   <FaFacebook className="w-5 h-5" />
                 </div>
 
-                <div className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
+                <div onClick={() => window.open("https://x.com/Hrk01221", "_blank")} className="glass hover:bg-gradient-to-br hover:from-muted-foreground/50 hover:via-muted-foreground/10 hover:to-transparent p-3 rounded-2xl hover:scale-110 cursor-pointer transition-all duration-400">
                   <FaSquareXTwitter className="w-5 h-5" />
                 </div>
               </div>
