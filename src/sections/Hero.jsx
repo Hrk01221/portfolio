@@ -1,7 +1,8 @@
 import { Button } from "@/components/Button";
 import { ArrowRight, ChevronDown, Download } from "lucide-react";
 import { FaGithub, FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
-import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { CountUp } from "@/components/CountUp";
 
 const skills = [
   "C++",
@@ -64,30 +65,63 @@ export const Hero = () => {
               lg:text-sm text-primary"
               >
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                Software Engineer • Competitive Programmer
+                Building, learning, and open to what's next
               </span>
             </div>
             {/* Headline */}
             <div className="space-y-4">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight animate-fade-in animation-delay-100">
-                Building{" "}
-                <span className="text-primary glow-text">seamless</span>
+                <span>Hi I am</span>
                 <br />
-                experiences,
-                <br />
-                <span className="font-serif italic text-4xl lg:text-5xl font-normal text-white">
-                  one line of code at a time
+                <span className="text-3xl lg:text-6xl text-highlight italic font-serif tracking-widest">
+                  Hridoy Nandi
                 </span>
               </h1>
-              <p className="text-sm lg:text-lg text-muted-foreground mx-w-lg animate-fade-in animation-delay-200">
-                Hi, I'm Hridoy Nandi, a full-stack developer and competitive
-                programmer passionate about creating modern web applications,
-                solving complex problems, and continuously learning new
-                technologies.
+              <div className="text-sm lg:text-2xl text-primary-foreground/80 animate-fade-in animation-delay-200">
+                Full-Stack Engineer · Competitive Programmer · AI/ML Enthusiast
+              </div>
+              <p className="text-sm lg:text-lg text-muted-foreground mx-w-lg animate-fade-in animation-delay-300">
+                A full-stack developer and competitive programmer passionate
+                about creating modern web applications, solving complex
+                problems, and continuously learning new technologies.
               </p>
+              <div className="grid grid-cols-2 lg:grid-cols-4 mt-10 mb-16 gap-6 animate-fade-in animation-delay-400">
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="text-2xl lg:text-3xl font-bold tracking-wide">
+                    <CountUp end={3000}  suffix="+"/>
+                  </span>
+                  <span className="uppercase text-[10px] lg:text-sm text-muted-foreground">
+                    problems solved
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="text-2xl lg:text-3xl font-bold tracking-wide">
+                    <CountUp end={30} suffix="+"/>
+                  </span>
+                  <span className="uppercase text-[10px] lg:text-sm text-muted-foreground">
+                    IUPC Participation
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="text-2xl lg:text-3xl font-bold tracking-wide">
+                    <CountUp end={2} suffix="x"/>
+                  </span>
+                  <span className="uppercase text-[10px] lg:text-sm text-muted-foreground">
+                    ICPC Regionalist
+                  </span>
+                </div>
+                <div className="flex flex-col gap-2 items-center">
+                  <span className="text-2xl lg:text-3xl font-bold tracking-wide">
+                    1x
+                  </span>
+                  <span className="uppercase text-[10px] lg:text-sm text-muted-foreground">
+                    Asia-West
+                  </span>
+                </div>
+              </div>
             </div>
             {/* CTAs */}
-            <div className="flex justify-center lg:justify-normal flex-wrap gap-4 animate-fade-in animation-delay-300">
+            <div className="flex justify-center lg:justify-normal flex-wrap gap-4 animate-fade-in animation-delay-500">
               <Button
                 onClick={() => {
                   document
@@ -105,8 +139,8 @@ export const Hero = () => {
               </AnimatedBorderButton>
             </div>
             {/* Social links */}
-            <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
-              <span className="text-sm text-muted-foreground">Follow: </span>
+            <div className="flex items-center gap-4 animate-fade-in animation-delay-600">
+              <span className="text-muted-foreground">Socials: </span>
               {[
                 { icon: FaGithub, href: "#" },
                 { icon: FaLinkedin, href: "#" },
@@ -114,7 +148,7 @@ export const Hero = () => {
                 { icon: FaXTwitter, href: "#" },
               ].map((social, index) => (
                 <a
-                  className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
+                  className="p-2 rounded-xl glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                   key={index}
                   href={social.href}
                 >
@@ -145,7 +179,7 @@ export const Hero = () => {
                 </div>
                 {/* Stats badge */}
                 <div className="absolute -top-4 -left-4 glass rounded-xl px-4 py-3 animate-float animation-delay-500">
-                  <div className="text-2xl font-bold text-primary">2+</div>
+                  <div className="text-2xl font-bold text-primary">1+</div>
                   <div className="text-xs text-muted-foreground">
                     Years Exp.
                   </div>
@@ -157,7 +191,7 @@ export const Hero = () => {
         {/* skills section */}
         <div className="mt-20 animate-fade-in animation-delay-600">
           <p className="text-sm text-muted-foreground mb-6 text-center">
-            Technologies I work with
+            What I Use
           </p>
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">

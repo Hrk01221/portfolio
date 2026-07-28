@@ -147,10 +147,10 @@ export const Skills = () => {
           </span>
 
           <h2 className="text-4xl lg:text-5xl font-bold mt-4 mb-6 animate-fade-in animation-delay-100 text-secondary-foreground">
-            Skills that
+            Skills,
             <span className="font-serif italic font-normal text-white">
               {" "}
-              makes difference
+              Sharpened over time
             </span>
           </h2>
 

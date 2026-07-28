@@ -45,7 +45,7 @@ export const Navbar = ({ activeSection }) => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
                 key={index}
-                className={`cursor-pointer px-4 py-2 text-sm rounded-full transition-all duration-300 hover:text-foreground hover:bg-surface ${activeSection === link.id && "bg-primary text-primary-foreground"}`}
+                className={`cursor-pointer px-4 py-2 text-sm rounded-full transition-all duration-300 hover:text-foreground hover:bg-surface ${activeSection === link.id && "bg-highlight text-primary-foreground"}`}
               >
                 {link.label}
               </div>
@@ -84,7 +84,7 @@ export const Navbar = ({ activeSection }) => {
                   setIsMobileMenuOpen(false);
                   document.getElementById(link.id)?.scrollIntoView({behavior:"smooth"})
                 }}
-                className={`text-lg ${activeSection===link.id ? "text-primary" : "text-muted-foreground"}  py-2`}
+                className={`text-lg ${activeSection===link.id ? "text-highlight" : "text-muted-foreground"}  py-2`}
               >
                 {link.label}
               </div>

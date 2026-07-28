@@ -38,10 +38,10 @@ export const About = () => {
               </span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-bold leading-tight animate-fade-in animation-delay-100 text-secondary-foreground">
-              Building the future,
+              Turning complex problems
               <span className=" font-serif italic font-normal text-white">
                 {" "}
-                one component at a time.
+                into clean code.
               </span>
             </h2>
             <div className="space-y-4 text-muted-foreground animate-fade-in animation-delay-200">
