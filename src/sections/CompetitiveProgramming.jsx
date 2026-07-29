@@ -25,7 +25,7 @@ export const CompetitiveProgramming = () => {
               <span className="font-bold">&nbsp;·&nbsp;</span>
               <span>1X ICPC Asia West Continent</span>
             </div>
-            <div className="grid lg:grid-cols-3 gap-8">
+            <div className="mt-16 grid lg:grid-cols-3 gap-8">
               <div className="glass px-4 py-2">
                 {/* img */}
                 <div className="relative overflow-hidden aspect-video">
@@ -41,7 +41,7 @@ export const CompetitiveProgramming = () => {
                 <div className="relative overflow-hidden aspect-video">
                   <img
                     src="/cc.jpg"
-                    alt="Codeforces"
+                    alt="CodeChef"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -50,8 +50,8 @@ export const CompetitiveProgramming = () => {
                 {/* img */}
                 <div className="relative overflow-hidden aspect-video">
                   <img
-                    src="/cf.jpg"
-                    alt="Codeforces"
+                    src="/atcoder.jpg"
+                    alt="Atcoder"
                     className="h-full w-full object-cover"
                   />
                 </div>
