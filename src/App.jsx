@@ -9,6 +9,7 @@ import { Footer } from "@/sections/Footer";
 import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { MouseSpotlight } from "@/components/MouseSpotlight";
+import { CompetitiveProgramming } from "@/sections/CompetitiveProgramming";
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
 
@@ -53,6 +54,7 @@ function App() {
       <Navbar activeSection={activeSection} />
       <main>
         <Hero />
+        <CompetitiveProgramming/>
         <About />
         <Education />
         <Skills />
