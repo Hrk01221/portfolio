@@ -54,8 +54,8 @@ function App() {
       <Navbar activeSection={activeSection} />
       <main>
         <Hero />
-        <CompetitiveProgramming/>
         <About />
+        <CompetitiveProgramming/>
         <Education />
         <Skills />
         <Projects />
