@@ -96,7 +96,7 @@ export const Hero = () => {
                 </div>
                 <div className="flex flex-col gap-2 items-center">
                   <span className="text-2xl lg:text-3xl font-bold tracking-wide">
-                    <CountUp end={30} suffix="+"/>
+                    <CountUp end={15} suffix="+"/>
                   </span>
                   <span className="uppercase text-[10px] lg:text-sm text-muted-foreground">
                     IUPC Participation

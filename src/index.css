@@ -5,27 +5,27 @@
   transform-origin: top center;
 } */
 @theme {
-  --color-background: #0F0A1A;
-  --color-foreground: #F8FAFC;
+  --color-background: #0f0a1a;
+  --color-foreground: #f8fafc;
 
   --color-card: #161124;
 
   /* Purple 400 */
-  --color-primary: #C084FC;
-  --color-primary-foreground: #FFFFFF;
+  --color-primary: #c084fc;
+  --color-primary-foreground: #ffffff;
 
-  --color-secondary: #241B3A;
-  --color-secondary-foreground: #C084FC;
+  --color-secondary: #241b3a;
+  --color-secondary-foreground: #c084fc;
 
-  --color-muted: #1D1830;
-  --color-muted-foreground: #A1A1AA;
+  --color-muted: #1d1830;
+  --color-muted-foreground: #a1a1aa;
 
-  --color-border: #31284A;
+  --color-border: #31284a;
 
   --color-surface: #181324;
 
-  --color-highlight: #A855F7; /* Pink accent */
-  --color-premium-purple: #A855F7; /* Purple 500 */
+  --color-highlight: #a855f7; /* Pink accent */
+  --color-premium-purple: #a855f7; /* Purple 500 */
 }
 
 @layer base {
@@ -182,7 +182,12 @@
 
 .bg-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
   background-size: 40px 40px;
+}
+
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
