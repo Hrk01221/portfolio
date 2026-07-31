@@ -9,6 +9,9 @@ import {
 const quicklinks = [
   { label: "Home", id: "hero" },
   { label: "About", id: "about" },
+  { label: "Competitive Programming", id: "cp" },
+  { label: "Achievements", id: "achievements" },
+  { label: "About", id: "about" },
   { label: "Projects", id: "projects" },
   { label: "Education", id: "education" },
   { label: "Skills", id: "skills" },
