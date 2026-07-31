@@ -10,6 +10,7 @@ import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { MouseSpotlight } from "@/components/MouseSpotlight";
 import { CompetitiveProgramming } from "@/sections/CompetitiveProgramming";
+import { Achievements } from "@/sections/Achievements";
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
 
@@ -56,6 +57,7 @@ function App() {
         <Hero />
         <About />
         <CompetitiveProgramming/>
+        <Achievements/>
         <Education />
         <Skills />
         <Projects />

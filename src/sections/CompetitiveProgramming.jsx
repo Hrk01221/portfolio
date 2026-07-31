@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, ArrowUpRight, MoveRight } from "lucide-react";
 import { useRef, useState } from "react";
+import { ContestCard } from "../components/ContestCard";
 
 const IUPC_RANKS = [
   {
@@ -185,9 +186,22 @@ const ICPC_RANKS = [
       "https://bapsoj.org/contests/icpc-asia-dhaka-regional-contest-2024-onsite-round/standings",
   },
 ];
+const Other_Ranks = [
+  {
+    banner:
+      "https://uploads.toph.co/s5nzv6EilBVKTtZs5uaRk01K7bJHKhlazhL3TNJ-Glg/resize:fill:1690:480:0/gravity:ce/czM6Ly90b3BoLXBsYXRmb3JtLXVwbG9hZHMvaW1hZ2VzLzE3NjQzNTQ0OTk1MDA5NTIwMTAtNDMyMzgxNzk3MDI0MjE0NDUxNC1jYTY1ZTU3OWU3OWViNmUyYTA0MDZmMTVlYjJjMzA5Mi5qcGVn",
+    contest_name: "BUBT Inter University Collaborative Programming Contest",
+    rank: "2nd",
+    team: "AUST_SIMPLEXITY",
+    solved: 7,
+    penalty: "537",
+    standing_link:
+      "https://toph.co/c/bubt-inter-university-collaborative/standings",
+  },
+];
 export const CompetitiveProgramming = () => {
   const scrollRef = useRef(null);
-  const [seeRank, setSeeRank] = useState(false);
+  const [seeRank, setSeeRank] = useState(1);
 
   const scroll = (direction) => {
     const container = scrollRef.current;
@@ -222,7 +236,7 @@ export const CompetitiveProgramming = () => {
                 Across Platforms
               </span>
             </div>
-            <div className="flex flex-wrap text-[10px] lg:text-base text-muted-foreground">
+            <div className="flex flex-wrap text-[10px] lg:text-base text-muted-foreground animate-fade-in animation-delay-200">
               <span>3000+ Problems solved</span>
               <span className="font-bold">&nbsp;·&nbsp;</span>
               <span>200+ Contests</span>
@@ -235,10 +249,10 @@ export const CompetitiveProgramming = () => {
             </div>
           </div>
 
-          <div className="text-sm mb-8 text-premium-purple">
+          <div className="text-sm mb-8 text-premium-purple animate-fade-in animation-delay-300">
             Online Judge Ranks
           </div>
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-8 animate-fade-in animation-delay-400">
             {/* CF */}
             <div className="relative glass px-6 py-4 space-y-4 rounded-2xl hover:translate-x-1 hover:-translate-y-1 transition-all ease-out duration-400 hover:border-primary/60">
               {/* img */}
@@ -403,22 +417,28 @@ export const CompetitiveProgramming = () => {
             </div>
           </div>
 
-          <div className="text-sm mt-16 mb-8 text-premium-purple">
+          <div className="text-sm mt-16 mb-8 text-premium-purple animate-fade-in animation-delay-500">
             IUPC and ICPC Ranks
           </div>
-          <div className="flex justify-between items-center">
-            <div className="flex gap-16">
+          <div className="flex justify-between items-center animate-fade-in animation-delay-600">
+            <div className="flex gap-8 lg:gap-16">
               <span
-                onClick={() => setSeeRank(false)}
-                className={`text-[12px] lg:text-base text-muted-foreground ${!seeRank ? "border-b text-primary-foreground" : "border-0"} cursor-pointer py-1 px-4 transition-all duration-100`}
+                onClick={() => setSeeRank(1)}
+                className={`text-[12px] lg:text-base text-muted-foreground ${seeRank === 1 ? "border-b text-primary-foreground" : "border-0"} cursor-pointer py-1 px-4 transition-all duration-100`}
               >
                 IUPC
               </span>
               <span
-                onClick={() => setSeeRank(true)}
-                className={`text-[12px] lg:text-base text-muted-foreground ${seeRank ? "border-b text-primary-foreground" : "border-0"} cursor-pointer px-4 transition-all duration-100`}
+                onClick={() => setSeeRank(2)}
+                className={`text-[12px] lg:text-base text-muted-foreground ${seeRank === 2 ? "border-b text-primary-foreground" : "border-0"} cursor-pointer px-4 transition-all duration-100`}
               >
                 ICPC
+              </span>
+              <span
+                onClick={() => setSeeRank(3)}
+                className={`text-[12px] lg:text-base text-muted-foreground ${seeRank === 3 ? "border-b text-primary-foreground" : "border-0"} cursor-pointer px-4 transition-all duration-100`}
+              >
+                Other
               </span>
             </div>
             <div className="hidden lg:flex gap-2">
@@ -438,139 +458,22 @@ export const CompetitiveProgramming = () => {
           </div>
           <div
             ref={scrollRef}
-            className="overflow-x-hidden hide-scrollbar flex gap-8"
+            className="overflow-x-hidden hide-scrollbar flex gap-8 animate-fade-in animation-delay-700"
           >
-            {!seeRank
-              ? // IUPC PART
-                IUPC_RANKS.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="card glass w-full lg:w-[40%] shrink-0 rounded-2xl p-4 space-y-8"
-                  >
-                    <div className="relative overflow-hidden h-52">
-                      {item.banner != "" ? (
-                        <img
-                          src={item.banner}
-                          alt={item.contest_name}
-                          className="h-full w-full object-cover rounded-2xl"
-                        />
-                      ) : (
-                        <div className="glass h-full rounded-2xl"></div>
-                      )}
-                      <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <h3 className="text-white text-xl md:text-3xl font-bold text-center px-4">
-                          {item.contest_name}
-                        </h3>
-                      </div>
-                      {item.banner != "" ? (
-                        <div className="absolute rounded-2xl inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-                      ) : null}
-                    </div>
-                    <div className="h-px bg-gradient-to-r from-muted-foreground/80 via-muted-foreground/50 to-transparent" />
-                    <div className="tracking-widest  text-base lg:text-lg space-y-4">
-                      <div className="flex justify-between">
-                        <span>Rank </span>
-                        <span className="text-green-400 font-bold">
-                          {item.rank}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Team </span>
-                        <span className="text-orange-400 font-bold">
-                          {item.team}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Solved </span>
-                        <span className="text-purple-400 font-bold">
-                          {item.solved}{" "}
-                          <span className="text-red-400">
-                            (penalty : {item.penalty})
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                    <div className="grid lg:grid-cols-2 gap-4">
-                      <div className="text-base lg:text-lg glass px-4 py-2 text-center rounded-2xl border border-primary/60 tracking-widest">
-                        Certificate
-                      </div>
-                      <div
-                        onClick={() =>
-                          window.open(item.standing_link, "_blank")
-                        }
-                        className="text-base lg:text-lg glass px-4 py-2 text-center rounded-2xl border border-primary/60 tracking-widest cursor-pointer hover:border-primary"
-                      >
-                        Standing
-                      </div>
-                    </div>
-                  </div>
-                ))
-              : // ICPC Part
-                ICPC_RANKS.map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="card glass w-full lg:w-[40%] shrink-0 rounded-2xl p-4 space-y-8"
-                  >
-                    <div className="relative overflow-hidden h-52">
-                      {item.banner != "" ? (
-                        <img
-                          src={item.banner}
-                          alt={item.contest_name}
-                          className="h-full w-full object-cover rounded-2xl"
-                        />
-                      ) : (
-                        <div className="glass h-full rounded-2xl"></div>
-                      )}
-                      <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <h3 className="text-white text-xl md:text-3xl font-bold text-center px-4">
-                          {item.contest_name}
-                        </h3>
-                      </div>
-                      {item.banner != "" ? (
-                        <div className="absolute rounded-2xl inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
-                      ) : null}
-                    </div>
-                    <div className="h-px bg-gradient-to-r from-muted-foreground/80 via-muted-foreground/50 to-transparent" />
-                    <div className="tracking-widest  text-base lg:text-lg space-y-4">
-                      <div className="flex justify-between">
-                        <span>Rank </span>
-                        <span className="text-green-400 font-bold">
-                          {item.rank}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Team </span>
-                        <span className="text-orange-400 font-bold">
-                          {item.team}
-                        </span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>Solved </span>
-                        <span className="text-purple-400 font-bold">
-                          {item.solved}{" "}
-                          <span className="text-red-400">
-                            (penalty : {item.penalty})
-                          </span>
-                        </span>
-                      </div>
-                    </div>
-                    <div className="grid lg:grid-cols-2 gap-4">
-                      <div className="text-base lg:text-lg glass px-4 py-2 text-center rounded-2xl border border-primary/60 tracking-widest">
-                        Certificate
-                      </div>
-                      <div
-                        onClick={() =>
-                          window.open(item.standing_link, "_blank")
-                        }
-                        className="text-base lg:text-lg glass px-4 py-2 text-center rounded-2xl border border-primary/60 tracking-widest cursor-pointer hover:border-primary"
-                      >
-                        Standing
-                      </div>
-                    </div>
-                  </div>
-                ))}
+            {seeRank === 1 &&
+              IUPC_RANKS.map((item, idx) => (
+                <ContestCard item={item} idx={idx} />
+              ))}
+            {seeRank === 2 &&
+              ICPC_RANKS.map((item, idx) => (
+                <ContestCard item={item} idx={idx} />
+              ))}
+            {seeRank === 3 &&
+              Other_Ranks.map((item, idx) => (
+                <ContestCard item={item} idx={idx} />
+              ))}
           </div>
-          <div className="flex lg:hidden gap-2 justify-center items-center">
+          <div className="flex lg:hidden gap-2 justify-center items-center animate-fade-in animation-delay-800">
             <div
               onClick={() => scroll("left")}
               className="cursor-pointer glass rounded-full w-12 h-12 flex items-center justify-center"
