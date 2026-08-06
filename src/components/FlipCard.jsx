@@ -82,13 +82,6 @@ export const FlipCard = ({item , idx}) => {
                 Teams
               </p>
             </div>
-
-            <div className="mt-auto pt-4">
-              <p className="text-sm text-muted-foreground">
-                Competed against top university teams from across Dhaka and
-                secured a Top 2 finish.
-              </p>
-            </div>
           </div>
         </div>
       </div>
